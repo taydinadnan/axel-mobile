@@ -13,6 +13,7 @@ class OnBoardingFirstScreen extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SafeArea(
               child: Stack(
@@ -48,12 +49,47 @@ class OnBoardingFirstScreen extends StatelessWidget {
                 ],
               ),
             ),
-            FloatingActionButton(onPressed: () {
-              Navigator.push(
+            Center(
+              child: Column(
+                children: const [
+                  Text(
+                    "Track Your Expanses",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 300,
+                      child: Text(
+                        "The best platform where you can take control of your personal expenses and save money.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(100.0),
+              child: FloatingActionButton(onPressed: () {
+                Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => OnBoardingSecondScreen()));
-            })
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation1, animation2) =>
+                        const OnBoardingSecondScreen(),
+                    transitionDuration: Duration.zero,
+                    reverseTransitionDuration: Duration.zero,
+                  ),
+                );
+              }),
+            )
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:axel_mobile/utils/colors.dart';
+import 'package:axel_mobile/view/onboarding/pages/on_boarding_third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,13 +17,9 @@ class OnBoardingFourthScreen extends StatelessWidget {
             SafeArea(
               child: Stack(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 4),
-                    child: Image.asset(
-                      "assets/illustrations/cloud1.png",
-                      height: 200,
-                    ),
+                  Image.asset(
+                    "assets/illustrations/cloud4.png",
+                    height: 200,
                   ),
                   Padding(
                     // padding: const EdgeInsets.only(top: 100.0),
@@ -37,13 +34,30 @@ class OnBoardingFourthScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 5.3,
-                        left: MediaQuery.of(context).size.width / 10),
-                    child: Image.asset("assets/illustrations/plane1PNG.png"),
+                        top: MediaQuery.of(context).size.height / 11,
+                        left: MediaQuery.of(context).size.width / 1.3),
+                    child: Image.asset(
+                      "assets/illustrations/plane2.png",
+                      height: 60,
+                    ),
                   ),
                 ],
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                FloatingActionButton(
+                    child: Icon(Icons.arrow_back),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OnBoardingThirdScreen()));
+                    }),
+              ],
+            )
           ],
         ),
       ),

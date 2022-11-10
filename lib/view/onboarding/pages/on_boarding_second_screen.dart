@@ -1,5 +1,6 @@
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_first_screen.dart';
+import 'package:axel_mobile/view/onboarding/pages/on_boarding_third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -31,14 +32,14 @@ class OnBoardingSecondScreen extends StatelessWidget {
                     ),
 
                     child: SvgPicture.asset(
-                      "assets/illustrations/vectorLine2.svg",
+                      "assets/illustrations/vectorLine1.svg",
                       fit: BoxFit.scaleDown,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 5.2,
-                      left: MediaQuery.of(context).size.width / 3.5,
+                      top: MediaQuery.of(context).size.height / 4.6,
+                      left: MediaQuery.of(context).size.width / 4,
                     ),
                     child: Image.asset(
                       "assets/illustrations/plane2.png",
@@ -48,12 +49,37 @@ class OnBoardingSecondScreen extends StatelessWidget {
                 ],
               ),
             ),
-            FloatingActionButton(onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => OnBoardingFirstScreen()));
-            })
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FloatingActionButton(
+                    child: Icon(Icons.arrow_back),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              OnBoardingFirstScreen(),
+                          transitionDuration: Duration.zero,
+                          reverseTransitionDuration: Duration.zero,
+                        ),
+                      );
+                    }),
+                FloatingActionButton(
+                    child: Icon(Icons.next_plan),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              OnBoardingThirdScreen(),
+                          transitionDuration: Duration.zero,
+                          reverseTransitionDuration: Duration.zero,
+                        ),
+                      );
+                    }),
+              ],
+            )
           ],
         ),
       ),
