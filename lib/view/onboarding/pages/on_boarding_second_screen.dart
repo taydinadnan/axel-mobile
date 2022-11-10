@@ -1,4 +1,5 @@
 import 'package:axel_mobile/utils/colors.dart';
+import 'package:axel_mobile/view/onboarding/pages/on_boarding_first_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,7 +27,7 @@ class OnBoardingSecondScreen extends StatelessWidget {
                   Padding(
                     // padding: const EdgeInsets.only(top: 100.0),
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 8,
+                      top: MediaQuery.of(context).size.height / 10,
                     ),
 
                     child: SvgPicture.asset(
@@ -36,8 +37,9 @@ class OnBoardingSecondScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 4.2,
-                        left: MediaQuery.of(context).size.width / 3.5),
+                      top: MediaQuery.of(context).size.height / 5.2,
+                      left: MediaQuery.of(context).size.width / 3.5,
+                    ),
                     child: Image.asset(
                       "assets/illustrations/plane2.png",
                       height: 60,
@@ -46,6 +48,12 @@ class OnBoardingSecondScreen extends StatelessWidget {
                 ],
               ),
             ),
+            FloatingActionButton(onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => OnBoardingFirstScreen()));
+            })
           ],
         ),
       ),
