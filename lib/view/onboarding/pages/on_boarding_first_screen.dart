@@ -1,4 +1,5 @@
 import 'package:axel_mobile/utils/colors.dart';
+import 'package:axel_mobile/utils/widgets/action_button.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -78,17 +79,26 @@ class OnBoardingFirstScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(100.0),
-              child: FloatingActionButton(onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  PageRouteBuilder(
-                    pageBuilder: (context, animation1, animation2) =>
-                        const OnBoardingSecondScreen(),
-                    transitionDuration: Duration.zero,
-                    reverseTransitionDuration: Duration.zero,
-                  ),
-                );
-              }),
+              child: CustomActionButton(
+                "Get Started",
+                () {
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          const OnBoardingSecondScreen(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
+                  );
+                },
+                backgroundColor: AxelColors.axelBG2,
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+                splashColor: Colors.grey.shade300,
+              ),
             )
           ],
         ),

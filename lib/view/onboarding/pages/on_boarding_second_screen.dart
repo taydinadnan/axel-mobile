@@ -1,4 +1,5 @@
 import 'package:axel_mobile/utils/colors.dart';
+import 'package:axel_mobile/utils/widgets/action_button.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_first_screen.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_third_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class OnBoardingSecondScreen extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SafeArea(
               child: Stack(
@@ -49,36 +51,56 @@ class OnBoardingSecondScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(
-                    child: Icon(Icons.arrow_back),
-                    onPressed: () {
+            Padding(
+              padding: const EdgeInsets.only(bottom: 100.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomActionButton(
+                    "Back",
+                    () {
                       Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
                           pageBuilder: (context, animation1, animation2) =>
-                              OnBoardingFirstScreen(),
+                              const OnBoardingFirstScreen(),
                           transitionDuration: Duration.zero,
                           reverseTransitionDuration: Duration.zero,
                         ),
                       );
-                    }),
-                FloatingActionButton(
-                    child: Icon(Icons.next_plan),
-                    onPressed: () {
+                    },
+                    backgroundColor: AxelColors.axelBG2,
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    splashColor: Colors.grey.shade300,
+                    width: MediaQuery.of(context).size.width / 3,
+                  ),
+                  const SizedBox(width: 10),
+                  CustomActionButton(
+                    "Next",
+                    () {
                       Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
                           pageBuilder: (context, animation1, animation2) =>
-                              OnBoardingThirdScreen(),
+                              const OnBoardingThirdScreen(),
                           transitionDuration: Duration.zero,
                           reverseTransitionDuration: Duration.zero,
                         ),
                       );
-                    }),
-              ],
+                    },
+                    backgroundColor: AxelColors.axelBG2,
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    splashColor: Colors.grey.shade300,
+                    width: MediaQuery.of(context).size.width / 3,
+                  ),
+                ],
+              ),
             )
           ],
         ),

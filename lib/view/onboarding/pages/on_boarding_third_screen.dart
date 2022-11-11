@@ -1,4 +1,5 @@
 import 'package:axel_mobile/utils/colors.dart';
+import 'package:axel_mobile/utils/widgets/action_button.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_fourth_screen.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_second_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,15 @@ class OnBoardingThirdScreen extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SafeArea(
               child: Stack(
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 3.3),
+                      left: MediaQuery.of(context).size.width / 3.3,
+                    ),
                     child: Image.asset(
                       "assets/illustrations/cloud3.png",
                       height: 200,
@@ -29,7 +32,7 @@ class OnBoardingThirdScreen extends StatelessWidget {
                   Padding(
                     // padding: const EdgeInsets.only(top: 100.0),
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 8,
+                      top: MediaQuery.of(context).size.height / 10,
                     ),
 
                     child: SvgPicture.asset(
@@ -39,7 +42,7 @@ class OnBoardingThirdScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 6.2,
+                        top: MediaQuery.of(context).size.height / 7.3,
                         left: MediaQuery.of(context).size.width / 2),
                     child: Image.asset(
                       "assets/illustrations/plane3.png",
@@ -49,12 +52,14 @@ class OnBoardingThirdScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(
-                    child: const Icon(Icons.arrow_back),
-                    onPressed: () {
+            Padding(
+              padding: const EdgeInsets.only(bottom: 100.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomActionButton(
+                    "Back",
+                    () {
                       Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
@@ -64,10 +69,19 @@ class OnBoardingThirdScreen extends StatelessWidget {
                           reverseTransitionDuration: Duration.zero,
                         ),
                       );
-                    }),
-                FloatingActionButton(
-                    child: const Icon(Icons.next_plan),
-                    onPressed: () {
+                    },
+                    backgroundColor: AxelColors.axelBG2,
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    splashColor: Colors.grey.shade300,
+                    width: MediaQuery.of(context).size.width / 3,
+                  ),
+                  const SizedBox(width: 10),
+                  CustomActionButton(
+                    "Next",
+                    () {
                       Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
@@ -77,8 +91,17 @@ class OnBoardingThirdScreen extends StatelessWidget {
                           reverseTransitionDuration: Duration.zero,
                         ),
                       );
-                    }),
-              ],
+                    },
+                    backgroundColor: AxelColors.axelBG2,
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    splashColor: Colors.grey.shade300,
+                    width: MediaQuery.of(context).size.width / 3,
+                  ),
+                ],
+              ),
             )
           ],
         ),
