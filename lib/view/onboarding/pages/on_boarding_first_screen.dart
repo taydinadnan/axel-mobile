@@ -1,5 +1,6 @@
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
+import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -53,13 +54,7 @@ class OnBoardingFirstScreen extends StatelessWidget {
             Center(
               child: Column(
                 children: const [
-                  Text(
-                    "Track Your Expanses",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  OnBoardingTitle(title: "Track Your Expanses"),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: SizedBox(
@@ -86,7 +81,7 @@ class OnBoardingFirstScreen extends StatelessWidget {
                     context,
                     PageRouteBuilder(
                       pageBuilder: (context, animation1, animation2) =>
-                          const OnBoardingSecondScreen(),
+                          OnBoardingSecondScreen(),
                       transitionDuration: Duration.zero,
                       reverseTransitionDuration: Duration.zero,
                     ),

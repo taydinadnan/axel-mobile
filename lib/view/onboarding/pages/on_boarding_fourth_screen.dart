@@ -1,5 +1,6 @@
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
+import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

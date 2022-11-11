@@ -64,7 +64,7 @@ class OnBoardingThirdScreen extends StatelessWidget {
                         context,
                         PageRouteBuilder(
                           pageBuilder: (context, animation1, animation2) =>
-                              const OnBoardingSecondScreen(),
+                              OnBoardingSecondScreen(),
                           transitionDuration: Duration.zero,
                           reverseTransitionDuration: Duration.zero,
                         ),

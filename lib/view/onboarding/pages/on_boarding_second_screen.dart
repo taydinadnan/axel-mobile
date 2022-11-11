@@ -1,12 +1,21 @@
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
+import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_first_screen.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class OnBoardingSecondScreen extends StatelessWidget {
-  const OnBoardingSecondScreen({Key? key}) : super(key: key);
+  OnBoardingSecondScreen({Key? key}) : super(key: key);
+
+  var items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +59,48 @@ class OnBoardingSecondScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            const OnBoardingTitle(title: "Select Your Currency"),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FilterChip(
+                      label: const Text("USD"),
+                      onSelected: (value) {},
+                      selected: true,
+                    ),
+                    const SizedBox(width: 5),
+                    FilterChip(
+                        label: const Text("EURO"), onSelected: (value) {}),
+                    const SizedBox(width: 5),
+                    FilterChip(
+                        label: const Text("POUND"), onSelected: (value) {}),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.grey.shade200,
+                  ),
+                  child: DropdownButton<String>(
+                    hint: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text("Select"),
+                    ),
+                    items: <String>['TL', 'POUND', 'USD', 'EURO']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (_) {},
+                  ),
+                )
+              ],
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 100.0),
