@@ -1,3 +1,4 @@
+import 'package:axel_mobile/utils/axel_styles.dart';
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
 import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
@@ -62,10 +63,7 @@ class OnBoardingFirstScreen extends StatelessWidget {
                       child: Text(
                         "The best platform where you can take control of your personal expenses and save money.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.normal,
-                        ),
+                        style: AxelStyles.loraTextBlack,
                       ),
                     ),
                   ),

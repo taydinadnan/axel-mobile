@@ -1,3 +1,4 @@
+import 'package:axel_mobile/utils/axel_styles.dart';
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
 import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
@@ -67,16 +68,38 @@ class OnBoardingSecondScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     FilterChip(
-                      label: const Text("USD"),
+                      label: const Text(
+                        "USD",
+                        style: AxelStyles.lora15Black,
+                      ),
                       onSelected: (value) {},
                       selected: true,
+                      selectedColor: Colors.green.shade300,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                     const SizedBox(width: 5),
                     FilterChip(
-                        label: const Text("EURO"), onSelected: (value) {}),
+                      label: const Text(
+                        "EURO",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
                     const SizedBox(width: 5),
                     FilterChip(
-                        label: const Text("POUND"), onSelected: (value) {}),
+                      label: const Text(
+                        "POUND",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 25),
@@ -94,7 +117,10 @@ class OnBoardingSecondScreen extends StatelessWidget {
                         .map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value),
+                        child: Text(
+                          value,
+                          style: AxelStyles.lora15Black,
+                        ),
                       );
                     }).toList(),
                     onChanged: (_) {},

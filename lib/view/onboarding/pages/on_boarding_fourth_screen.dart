@@ -1,3 +1,4 @@
+import 'package:axel_mobile/utils/axel_styles.dart';
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
 import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
@@ -47,8 +48,69 @@ class OnBoardingFourthScreen extends StatelessWidget {
                 ],
               ),
             ),
+            const OnBoardingTitle(title: "Select Your Limit"),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FilterChip(
+                      side: BorderSide(),
+                      label: const Text(
+                        "\$100",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      selected: false,
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    const SizedBox(width: 5),
+                    FilterChip(
+                      label: const Text(
+                        "\$500",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      backgroundColor: AxelColors.axelBG2,
+                      selected: true,
+                      selectedColor: Colors.green.shade300,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    const SizedBox(width: 5),
+                    FilterChip(
+                      label: const Text(
+                        "\$1000",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.grey.shade200,
+                  ),
+                  width: 100,
+                  height: 40,
+                  child: const TextField(
+                    decoration: InputDecoration(
+                        hintText: "\$Custom", border: InputBorder.none),
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                  ),
+                )
+              ],
+            ),
             Padding(
-              padding: const EdgeInsets.all(100.0),
+              padding: const EdgeInsets.only(bottom: 100.0),
               child: CustomActionButton(
                 "Done",
                 () {

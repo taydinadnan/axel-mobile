@@ -8,6 +8,7 @@ abstract class AxelColors {
   static const axelBG = Color(0xFFF8F0F0);
   static const axelBG2 = Color(0xFF3A4D71);
   static const lighBlueBG = Color(0xFFA3D2EF);
+  static const black = Color.fromARGB(255, 0, 0, 0);
 
   static const white = Color.fromRGBO(255, 255, 255, 1);
 }

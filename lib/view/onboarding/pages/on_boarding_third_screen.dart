@@ -1,5 +1,7 @@
+import 'package:axel_mobile/utils/axel_styles.dart';
 import 'package:axel_mobile/utils/colors.dart';
 import 'package:axel_mobile/utils/widgets/action_button.dart';
+import 'package:axel_mobile/utils/widgets/onboarding_title.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_fourth_screen.dart';
 import 'package:axel_mobile/view/onboarding/pages/on_boarding_second_screen.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +53,65 @@ class OnBoardingThirdScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            const OnBoardingTitle(title: "Select Your Balance"),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FilterChip(
+                      label: const Text(
+                        "\$100",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      selected: true,
+                      selectedColor: Colors.green.shade300,
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    const SizedBox(width: 5),
+                    FilterChip(
+                      label: const Text(
+                        "\$500",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    const SizedBox(width: 5),
+                    FilterChip(
+                      label: const Text(
+                        "\$1000",
+                        style: AxelStyles.lora15Black,
+                      ),
+                      onSelected: (value) {},
+                      backgroundColor: AxelColors.axelBG2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.grey.shade200,
+                  ),
+                  width: 100,
+                  height: 40,
+                  child: const TextField(
+                    decoration: InputDecoration(
+                        hintText: "\$Custom", border: InputBorder.none),
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                  ),
+                )
+              ],
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 100.0),

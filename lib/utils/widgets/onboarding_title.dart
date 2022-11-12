@@ -1,3 +1,4 @@
+import 'package:axel_mobile/utils/axel_styles.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingTitle extends StatelessWidget {
@@ -7,12 +8,6 @@ class OnBoardingTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: const TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
-      ),
-    );
+    return Text(title, style: AxelStyles.loraTitleBlack);
   }
 }
